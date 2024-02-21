@@ -37,14 +37,13 @@
     var container = document.querySelector(".container");
     var overlay = document.querySelector(".overlay");
 
-    // DeviceOrientation 이벤트
     window.addEventListener('deviceorientation', function(e) {
         const beta = e.beta;
         const gamma = e.gamma;
         const alpha = e.alpha;
 
-        var x = beta;
-        var y = gamma;
+        var x = gamma;
+        var y = beta;
 
         var lotateX = 2/-25 * x + 20;
         var lotateY = 2/-25 * y + 20;
