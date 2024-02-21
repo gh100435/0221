@@ -43,15 +43,16 @@
         const gamma = e.gamma;
         const alpha = e.alpha;
 
-        var lotateX = 2/-25 * beta + 20;
-        var lotateY = 2/-25 * alpha + 20;
+        var x = beta;
+        var y = gamma;
 
-        overlay.style = `background-position : ${(beta/-10+50)+(alpha/-10+50)}%`;
+        var lotateX = 2/-25 * x + 20;
+        var lotateY = 2/-25 * y + 20;
+
+        overlay.style = `background-position : ${(x/-10+50)+(y/-10+50)}%`;
         container.style = `transform : perspective(500px)
         rotateX(${lotateX}deg) rotateY(${lotateY}deg)`;
     });
-
-    document.addEventListener('t')
 
     container.addEventListener('mousemove', function(e) {
         var x = e.offsetX;
@@ -68,5 +69,5 @@
     container.addEventListener('mouseout', function(e) {
         overlay.style = `filter : opacity(0)`;
         container.style = `transform : perspective(500px) rotateX(0deg) rotateY(0deg)`;
-    })
+    });
 </script>
