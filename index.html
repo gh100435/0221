@@ -42,13 +42,10 @@
         const gamma = e.gamma;
         const alpha = e.alpha;
 
-        var x = gamma;
-        var y = beta;
+        var lotateX = gamma;
+        var lotateY = beta;
 
-        var lotateX = gamma - 90;
-        var lotateY = beta - 180;
-
-        overlay.style = `background-position : ${(x/-10+50)+(y/-10+50)}%`;
+        overlay.style = `background-position : ${(lotateX/-10+50)+(lotateY/-10+50)}%`;
         container.style = `transform : perspective(500px)
         rotateX(${lotateX}deg) rotateY(${lotateY}deg)`;
     });
