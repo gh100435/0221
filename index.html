@@ -43,38 +43,15 @@
         const gamma = e.gamma;
         const alpha = e.alpha;
 
-        const degtorad = Math.PI / 100;
+        var lotateX = 2/-25 * beta + 20;
+        var lotateY = 2/-25 * alpha + 20;
 
-        const _x = beta ? beta * degtorad : 0;
-        const _y = gamma ? gamma * degtorad : 0;
-        const _z = alpha ? alpha * degtorad : 0;
-        
-        const cY = Math.cos(_y);
-        const cZ = Math.cos(_z);
-        const sX = Math.sin(_x);
-        const sY = Math.sin(_y);
-        const sZ = Math.sin(_z);
-        
-        const Vx = -cZ * sY - sZ * sX * cY;
-        const Vy = -sZ * sY + cZ * sX * cY;
-        
-        let compassHeading = Math.atan(Vx / Vy);
-        
-        if (Vy < 0) {
-            compassHeading += Math.PI;
-        } else if (Vx < 0) {
-            compassHeading += 2 * Math.PI;
-        }
-        
-        return compassHeading * (180 / Math.PI);
-
-        var lotateX = 2/-25 * Vx + 20;
-        var lotateY = 2/-25 * Vy + 20;
-
-        overlay.style = `background-position : ${(Vx/-10+50)+(Vy/-10+50)}%`;
+        overlay.style = `background-position : ${(beta/-10+50)+(alpha/-10+50)}%`;
         container.style = `transform : perspective(500px)
         rotateX(${lotateX}deg) rotateY(${lotateY}deg)`;
     });
+
+    document.addEventListener('t')
 
     container.addEventListener('mousemove', function(e) {
         var x = e.offsetX;
