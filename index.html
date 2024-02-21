@@ -42,8 +42,8 @@
         const gamma = e.gamma;
         const alpha = e.alpha;
 
-        var lotateX = beta;
-        var lotateY = gamma;
+        var lotateX = gamma;
+        var lotateY = beta;
 
         overlay.style = `background-position : ${((lotateX - 20) * -12.5/-10+50)+((lotateY - 20) * -12.5/-10+50)}%`;
         container.style = `transform : perspective(500px)
